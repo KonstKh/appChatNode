@@ -10,6 +10,12 @@ app.use(express.static("public"));
 app.use(express.static("node_modules/bootstrap/dist"));
 app.use(bodyParser.urlencoded({ extended : true })); // register before it use
 
+// app.use(function(req, res, next){
+// 	console.log(`Incoming request: ${req.url}`);
+// 	next();
+// });
+
+
 app.get('/', function handler(req, res){
 	res.render("index",  {title: "Home"}, function  (error, html){
 		console.log(html);
